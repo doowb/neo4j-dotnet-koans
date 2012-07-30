@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koans", "Koans\Koans.csproj", "{2E4A590C-E564-4344-88D1-E85C91AA2E97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4D1BB433-3695-4899-9C89-F284337DA65B}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		neo4j-dotnet-koans.vsmdi = neo4j-dotnet-koans.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorWhoUniverse", "DoctorWhoUniverse\DoctorWhoUniverse.csproj", "{9CDD4DE9-4A9D-4619-BCC8-48A2467D3949}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = neo4j-dotnet-koans.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E4A590C-E564-4344-88D1-E85C91AA2E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E4A590C-E564-4344-88D1-E85C91AA2E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E4A590C-E564-4344-88D1-E85C91AA2E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E4A590C-E564-4344-88D1-E85C91AA2E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CDD4DE9-4A9D-4619-BCC8-48A2467D3949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CDD4DE9-4A9D-4619-BCC8-48A2467D3949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CDD4DE9-4A9D-4619-BCC8-48A2467D3949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CDD4DE9-4A9D-4619-BCC8-48A2467D3949}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
