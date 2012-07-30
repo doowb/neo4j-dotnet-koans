@@ -16,51 +16,26 @@ namespace DoctorWhoUniverse.Services
         /// </summary>
         public ActorService(GraphClient db) : base(db) { }
 
-
-        public NodeReference EnsureActorGroupExists()
+        public void Generate()
         {
-            // try to find the actor group node in the graph
-            var groupNode = db.RootNode.In<ActorGroup>(ActorGroupBelongsTo.TypeKey).SingleOrDefault();
-            NodeReference groupNodeReference = null;
-            if (groupNode == null)
-            {
-                groupNodeReference = CreateActorGroup(new ActorGroup());
-            }
-            else
-            {
-                groupNodeReference = groupNode.Reference;
-            }
-            return groupNodeReference;
-        }
-
-        public NodeReference EnsureActorIsInDb(Actor actor)
-        {
-            var actorNode = db.QueryIndex<Node<Actor>>("actor", 
-                IndexFor.Node, 
-                String.Format("ActorName={0}", actor.ActorName)).FirstOrDefault();
-
-            NodeReference actorNodeReference = null;
-            if (actorNode == null)
-            {
-                var groupNodeReference = EnsureActorGroupExists() as NodeReference<ActorGroup>;
-                actorNodeReference = CreateActor(actor, groupNodeReference);
-            }
-            else
-            {
-                actorNodeReference = actorNode.Reference;
-            }
-            return actorNodeReference;
 
         }
 
-        public NodeReference CreateActorGroup(ActorGroup group)
+        public NodeReference EnsureActor(Actor actor)
         {
-            return db.Create<ActorGroup>(group, new ActorGroupBelongsTo(db.RootNode));
+            var newActor = CreateActor(actor);
+            //var characterService = new CharacterService(db);
+            //foreach (var character in actor.Characters)
+            //{
+            //    var newCharacter = db.EnsureCharacter(character);
+            //}
+            return newActor;
         }
 
-        public NodeReference CreateActor(Actor actor, NodeReference<ActorGroup> actorGroup)
+        public NodeReference CreateActor(Actor actor)
         {
-            return db.Create<Actor>(actor, new ActorBelongsTo(actorGroup));
+            var newActor = db.Create<Actor>(actor, new ObjectBelongsTo(db.RootNode));
+            return newActor;
         }
     }
 }

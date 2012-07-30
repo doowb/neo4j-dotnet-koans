@@ -7,15 +7,13 @@ using DoctorWhoUniverse.Models;
 
 namespace DoctorWhoUniverse.Relationships
 {
-    class ActorGroupBelongsTo :
-        Relationship,
-        IRelationshipAllowingSourceNode<ActorGroup>,
-        IRelationshipAllowingTargetNode<RootNode>
+    public class ActorPlayed : Relationship,
+        IRelationshipAllowingSourceNode<Actor>,
+        IRelationshipAllowingTargetNode<Character>
     {
+        public ActorPlayed(NodeReference targetNode) : base(targetNode) { }
 
-        public ActorGroupBelongsTo(NodeReference targetNode) : base(targetNode) { }
-
-        public const string TypeKey = "ACTORGROUP_BELONGS_TO";
+        public const string TypeKey = Constants.PLAYED;
         public override string RelationshipTypeKey
         {
             get { return TypeKey; }

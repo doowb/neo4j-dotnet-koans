@@ -26,29 +26,6 @@ namespace Koans
         public void UpdateExistingNodeTest()
         {
             GraphClient db = DatabaseHelper.CreateDatabase();
-            var userService = new UserService(db);
-
-            // get a user node
-            var userNode = db.RootNode.
-                In<Users>(UsersBelongTo.TypeKey).
-                In<User>(UserBelongsTo.TypeKey, 
-                    u => u.Username == "bwoodward").
-                FirstOrDefault();
-
-            // stupid work around because || is not supported
-            if (userNode == null)
-            {
-                userNode = db.RootNode.
-                In<Users>(UsersBelongTo.TypeKey).
-                In<User>(UserBelongsTo.TypeKey,
-                    u => u.Username == "bwoodward test").
-                FirstOrDefault();
-            }
-
-            if (userNode != null)
-            {
-                userService.UpdateUser(userNode, u => u.Username = u.Username.IndexOf("test") > -1 ? "bwoodward" : "bwoodward test");
-            }
 
         }
     }

@@ -18,16 +18,7 @@ namespace DoctorWhoUniverse
 
         public void GenerateUniverse()
         {
-            AddUsers();
         }
-        private void AddUsers()
-        {
-            var userService = new UserService(db);
-            var usersNodeReference = userService.EnsureUsersNodeExists();
 
-            var userNodeReference = userService.CreateUser(
-                new User() { Username = "BWoodward" }, 
-                (NodeReference<Users>)usersNodeReference);
-        }
     }
 }

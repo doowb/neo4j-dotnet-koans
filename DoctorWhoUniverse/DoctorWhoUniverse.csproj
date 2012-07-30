@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Neo4jClient">
-      <HintPath>..\packages\Neo4jClient.1.0.0.345\lib\Neo4jClient.dll</HintPath>
+    <Reference Include="Neo4jClient, Version=1.0.0.404, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Neo4jClient.1.0.0.404\lib\Neo4jClient.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
@@ -52,15 +53,16 @@
     <Compile Include="DatabaseHelper.cs" />
     <Compile Include="DoctorWhoUniverseGenerator.cs" />
     <Compile Include="Models\Actor.cs" />
-    <Compile Include="Models\ActorGroup.cs" />
+    <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\Episode.cs" />
+    <Compile Include="Models\Planet.cs" />
+    <Compile Include="Models\Species.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relationships\ActorBelongsTo.cs" />
-    <Compile Include="Relationships\ActorGroupBelongsTo.cs" />
-    <Compile Include="Relationships\UserBelongsTo.cs" />
-    <Compile Include="Relationships\UsersBelongTo.cs" />
+    <Compile Include="Relationships\ActorPlayed.cs" />
+    <Compile Include="Relationships\Constants.cs" />
     <Compile Include="Services\ActorService.cs" />
     <Compile Include="Services\BaseService.cs" />
-    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
